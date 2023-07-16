@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="artist-info">
+    <h1>{{ artist.name }}</h1>
+    <img [src]="artist.bannerImage" alt="Banner Image">
+    <div class="info-section">
+      <mat-card>
+        <mat-card-content>
+          <h2>Listeners</h2>
+          <p>{{ artist.listeners }}</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <h2>Plays</h2>
+          <p>{{ artist.plays }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="top-albums">
+    <h3>Top Albums</h3>
+    <div class="album-list">
+      <mat-card *ngFor="let album of topAlbums">
+        <img [src]="album.artwork" alt="Album Artwork">
+        <mat-card-content>
+          <h4>{{ album.title }}</h4>
+          <p>Playcount: {{ album.playcount }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="top-albums">
+    <h3>Top Tracks</h3>
+    <div class="album-list">
+      <mat-card *ngFor="let track of topTracks">
+        <img [src]="track.artwork" alt="Album Artwork">
+        <mat-card-content>
+          <h4>{{ track.title }}</h4>
+          <p>Playcount: {{ track.playcount }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

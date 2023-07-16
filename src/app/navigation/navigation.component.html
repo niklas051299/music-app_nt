@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-panel-title routerLink="/"><h2>Music App</h2></mat-panel-title>
+
+<mat-form-field class="example-full-width">
+  <input matInput type="text" [(ngModel)]="searchQuery" (keydown.enter)="performSearchList(this.searchQuery)" (keyup)="updateSearch()" placeholder="Search artist">
+  </mat-form-field>
+  <button type="submit" (click)="performSearchList(this.searchQuery)" mat-icon-button>
+    <mat-icon>search</mat-icon>
+  </button>
+<mat-card role="list" style="color: black">
+  <mat-card-content *ngFor="let artist of searchResults" (click)="performSearchList(artist.name)">
+    <span style="color: black">{{ artist.name }}</span>
+  </mat-card-content>
+</mat-card>
+  <button id="navigation-comparison-button" mat-icon-button>
+    <mat-icon>compare_arrows</mat-icon>
+  </button>
+</mat-toolbar>
